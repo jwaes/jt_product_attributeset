@@ -7,8 +7,8 @@
         <field name="inherit_id" ref="product.product_template_only_form_view"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='attribute_line_ids']//field[@name='attribute_id']" position="after">
-                <field name="attribute_set_type" attrs="{'readonly': [('attribute_set_type', '=', 'default')]}"/>
-                <field name="attribute_set_ids"  widget="many2many_tags"/>
+                <field name="attribute_set_type" />
+                <field name="attribute_set_ids" widget="many2many_tags" attrs="{'readonly': [('attribute_set_type', '=', 'default')]}"/>
             </xpath>
             <!-- <xpath expr="//field[@name='attribute_line_ids']//field[@name='value_ids']" position="attributes">
                 <attribute name="attrs" >{'readonly': [('attribute_set_type', '==', 'set')]}</attribute>
