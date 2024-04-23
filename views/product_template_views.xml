@@ -10,9 +10,9 @@
                 <field name="attribute_set_type" />
                 <field name="attribute_set_ids" widget="many2many_tags" attrs="{'readonly': [('attribute_set_type', '=', 'default')]}"/>
             </xpath>
-            <!-- <xpath expr="//field[@name='attribute_line_ids']//field[@name='value_ids']" position="attributes">
+            <xpath expr="//field[@name='attribute_line_ids']//field[@name='value_ids']" position="attributes">
                 <attribute name="attrs" >{'readonly': [('attribute_set_type', '==', 'set')]}</attribute>
-            </xpath>                          -->
+            </xpath>                         
         </field>
     </record>
 
