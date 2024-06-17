@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
-    <record id="product_template_only_form_view_inherit_product" model="ir.ui.view">
-        <field name="name">product.template.view.form.inherit</field>
-        <field name="model">product.template</field>
-        <field name="inherit_id" ref="product.product_template_only_form_view"/>
-        <field name="arch" type="xml">
-            <xpath expr="//field[@name='attribute_line_ids']//field[@name='attribute_id']" position="after">
-                <field name="attribute_set_type" />
-                <field name="attribute_set_ids" widget="many2many_tags" attrs="{'readonly': [('attribute_set_type', '=', 'default')]}"/>
-            </xpath>
-            <xpath expr="//field[@name='attribute_line_ids']//field[@name='value_ids']" position="attributes">
-                <attribute name="attrs" >{'readonly': [('attribute_set_type', '==', 'set')]}</attribute>
-            </xpath>                         
-        </field>
-    </record>
-
+ <record id="product_template_only_form_view_inherit_product" model="ir.ui.view">
+  <field name="name">product.template.view.form.inherit</field>
+  <field name="model">product.template</field>
+  <field name="inherit_id" ref="product.product_template_only_form_view"/>
+  <field name="arch" type="xml">
+   <xpath expr="//field[@name='attribute_line_ids']//field[@name='attribute_id']" position="after">
+    <field name="attribute_set_type"/>
+    <field name="attribute_set_ids" readonly="attribute_set_type == 'default'" widget="many2many_tags"/>
+   </xpath>
+   <xpath expr="//field[@name='attribute_line_ids']//field[@name='value_ids']" position="attributes">
+    <attribute name="readonly">attribute_set_type == 'set'</attribute>
+   </xpath></field>
+ </record>
 </odoo>

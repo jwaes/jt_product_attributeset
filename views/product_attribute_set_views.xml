@@ -1,45 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
-    <record id="product_attribute_set_view_tree" model="ir.ui.view">
-        <field name="name">product.attribute.set.view.tree</field>
-        <field name="model">product.attribute.set</field>
-        <field name="arch" type="xml">
-            <tree string="Attribute Sets">
-                <field name="name" />
-                <field name="attribute_id" />
-            </tree>
-        </field>
-    </record>
-
-    <record id="product_attribute_set_view_form" model="ir.ui.view">
-        <field name="name">product.attribute.set.view.form</field>
-        <field name="model">product.attribute.set</field>
-        <field name="arch" type="xml">
-            <form string="Attribute Set">
-                <field name="number_related_products" invisible="1"/>
-                <sheet>
-                    <div class="oe_button_box" name="button_box">
-                        <button class="oe_stat_button" name="action_open_related_products"
-                            type="object" icon="fa-bars"
-                            attrs="{'invisible': [('number_related_products', '=', [])]}">
-                            <div class="o_stat_info">
-                                <span class="o_stat_value">
-                                    <field name="number_related_products" />
-                                </span>
-                                <span class="o_stat_text">Related Products</span>
-                            </div>
-                        </button>
-                    </div>
-                    <group>
-                        <field name="name" />
-                        <field name="attribute_id" />
-                        <field name="attribute_value_ids" widget="many2many_tags" />
-
-                    </group>
-                </sheet>
-            </form>
-        </field>
-    </record>
-
+ <record id="product_attribute_set_view_tree" model="ir.ui.view">
+  <field name="name">product.attribute.set.view.tree</field>
+  <field name="model">product.attribute.set</field>
+  <field name="arch" type="xml">
+   <tree string="Attribute Sets">
+    <field name="name"/>
+    <field name="attribute_id"/>
+   </tree></field>
+ </record>
+ <record id="product_attribute_set_view_form" model="ir.ui.view">
+  <field name="name">product.attribute.set.view.form</field>
+  <field name="model">product.attribute.set</field>
+  <field name="arch" type="xml">
+   <form string="Attribute Set">
+    <field invisible="1" name="number_related_products"/>
+    <sheet>
+     <div class="oe_button_box" name="button_box">
+      <button class="oe_stat_button" icon="fa-bars" invisible="number_related_products == []" name="action_open_related_products" type="object">
+       <div class="o_stat_info">
+        <span class="o_stat_value">
+         <field name="number_related_products"/>
+        </span>
+        <span class="o_stat_text">
+         Related Products
+        </span>
+       </div>
+      </button>
+     </div>
+     <group>
+      <field name="name"/>
+      <field name="attribute_id"/>
+      <field name="attribute_value_ids" widget="many2many_tags"/>
+     </group>
+    </sheet>
+   </form></field>
+ </record>
 </odoo>
