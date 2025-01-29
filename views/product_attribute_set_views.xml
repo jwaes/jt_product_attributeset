@@ -14,7 +14,6 @@
   <field name="model">product.attribute.set</field>
   <field name="arch" type="xml">
    <form string="Attribute Set">
-    <field invisible="1" name="number_related_products"/>
     <sheet>
      <div class="oe_button_box" name="button_box">
       <button class="oe_stat_button" icon="fa-bars" invisible="number_related_products == []" name="action_open_related_products" type="object">
