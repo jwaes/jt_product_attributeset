@@ -46,6 +46,6 @@ class ProductAttributeSet(models.Model):
             'type': 'ir.actions.act_window',
             'name': _("Related Products"),
             'res_model': 'product.template',
-            'view_mode': 'tree,form',
+            'view_mode': 'list,form',
             'domain': [('id', 'in', self.product_template_ids.ids)],
         }        

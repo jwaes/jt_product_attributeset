@@ -18,7 +18,7 @@
                 </button>
             </div>
 
-            <xpath expr="//tree" position="inside">
+            <xpath expr="//list" position="inside">
                 <field name="attribute_id" invisible="1" />
                 <field name="attribute_set_ids" widget="many2many_tags" optional="show" />
             </xpath>

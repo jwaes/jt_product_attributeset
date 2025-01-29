@@ -23,7 +23,7 @@ class ProductAttribute(models.Model):
             'type': 'ir.actions.act_window',
             'name': _("Related Attribute Sets"),
             'res_model': 'product.attribute.set',
-            'view_mode': 'tree,form',
+            'view_mode': 'list,form',
             'domain': [('id', 'in', self.attribute_set_ids.ids)],
             'context': {
                 'default_attribute_id': self.id
