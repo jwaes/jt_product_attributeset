@@ -44,7 +44,7 @@ class ProductAttributeSet(models.Model):
     def action_open_related_products(self):
         return {
             'type': 'ir.actions.act_window',
-            'name': _("Related Products"),
+            'name': self.env._("Related Products"),
             'res_model': 'product.template',
             'view_mode': 'list,form',
             'domain': [('id', 'in', self.product_template_ids.ids)],

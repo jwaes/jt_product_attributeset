@@ -21,7 +21,7 @@ class ProductAttribute(models.Model):
     def action_open_related_attribute_sets(self):
         return {
             'type': 'ir.actions.act_window',
-            'name': _("Related Attribute Sets"),
+            'name': self.env._("Related Attribute Sets"),
             'res_model': 'product.attribute.set',
             'view_mode': 'list,form',
             'domain': [('id', 'in', self.attribute_set_ids.ids)],
